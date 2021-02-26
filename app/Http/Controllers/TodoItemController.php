@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\TodoItem;
+use App\Models\TodoList;
+
 use Illuminate\Http\Request;
 
 class TodoItemController extends Controller
@@ -37,8 +39,33 @@ class TodoItemController extends Controller
     {
         //
 
+        $validateData = $request->validate([
+            'title' => 'required||max:255'
+        ]);
+
+        $toDoListID = null;
+
+        if ($request->todo_list_value) {
+            $hasToDoListAlready = TodoList::where('title', $request->todo_list_value)->first();
+            if (!($hasToDoListAlready)) {
+                $newToDo =
+                    TodoList::create([
+                        'title' => $request->todo_list_value,
+                    ]);
+            }
+            $toDoListID = TodoList::where('title', $request->todo_list_value)->pluck('id')->first();
+        } else {
+            $toDoListID = TodoList::where('title', "Untitled")->pluck('id')->first();
+            if (!$toDoListID) {
+                \Illuminate\Support\Facades\DB::insert('insert into todo_lists (id, title) values (?, ?)', [0, 'Untitled']);
+                $toDoListID = TodoList::where('title', "Untitled")->pluck('id')->first();
+            }
+        }
+
+
         $todo = TodoItem::create([
-            'title' => $request->title
+            'title' => $request->title,
+            'todo_list_id' => (int)$toDoListID
         ]);
 
         return redirect('/');
