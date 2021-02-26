@@ -74,7 +74,70 @@
 </div>
 </div>
          
+
+
+
+
+         @php
+        $tmp = \App\Models\TodoItem::where('todo_list_id',$todoListCat->id )->latest()->get();
+        @endphp
+
+        @if(count($tmp))
+
+<div class="table-responsive">
+  <table class="table table-borderless table-sm table-light ">
+    <thead>
+      <tr>
+        {{-- <th scope="col">#</th> --}}
+                <th scope="col"></th>
+        <th scope="col">To do</th>
+       
+    <th scope="col">Postings</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+          @foreach($tmp as $todoListItem)
+
+        <tr class=" @if($todoListItem->status == 1) 
+ is-completed 
+ @endif 
+ ">
+
+
+        <td class="font-weight-bold">{{ $todoListItem->title }}</td>
+
+<td> 
+<div>Created at: {{ $todoListItem->created_at }} </div>
+<div>Updated at: {{ $todoListItem->updated_at }}</div>  
+</td>
+
+ </tr>
+         @endforeach
+
+
+
+         </tbody>
+
+  </table>
+</div>
+
+
+@else 
+
+<div class="font-weight-bold font-italic">No any entries yet.</div>
+        @endif
+
+
+
+
+        
 @endforeach
+
+
+
+
 
 
 @endsection
