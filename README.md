@@ -3,7 +3,6 @@
 A todo list app mimicking a note-taking app.
 
 > ⭐ Built without JavaScript
-> Time taken: 7:10 PM to 9:07PM CST
 
 I've added the following features:
 
@@ -33,3 +32,7 @@ PHP/8.0.0
 Laravel Framework: 8.12,
 Bootstrap 4.5,
 SCSS via _(webpack) Compiling Assets (Mix)_
+
+
+# Duration
+Time taken: 7:10 PM to 9:07PM CST
