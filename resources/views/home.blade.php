@@ -89,7 +89,7 @@
     <thead>
       <tr>
         {{-- <th scope="col">#</th> --}}
-                <th scope="col"></th>
+                {{-- <th scope="col"></th> --}}
         <th scope="col">To do</th>
        
     <th scope="col">Postings</th>

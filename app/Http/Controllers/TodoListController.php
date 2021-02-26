@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TodoItem;
 use App\Models\TodoList;
 use Illuminate\Http\Request;
 
@@ -95,6 +96,7 @@ class TodoListController extends Controller
     {
         //
         $todoList->delete();
+        TodoItem::where('todo_list_id', $todoList)->delete();
         return redirect('/');
     }
 }
