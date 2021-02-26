@@ -19,6 +19,14 @@
   aria-label="Whats on your mind?" aria-describedby="basic-1" required>
 
 
+    <input name="author" type="text" class="form-control" placeholder="Author" 
+  aria-label="Author" aria-describedby="basic-2">
+
+
+  <input  name="deadline" type="datetime-local" id="deadline"
+       value="Due time"
+       min="2021-01-07T00:00" max="2022-12-14T00:00" required>
+
   
 
 <label>To do List
@@ -29,6 +37,14 @@
   <option value="{{ $todoListCat->title }}">
           @endforeach
 </datalist>
+
+
+<label>Priority</label>
+<select class="priority" name="priority" size="3">
+  <option value="1">Low</option>
+  <option selected value="2">Medium</option>
+  <option value="3">High</option>
+</select>
 
 
 
