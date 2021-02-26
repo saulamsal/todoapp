@@ -68,6 +68,7 @@ class TodoListController extends Controller
     public function edit(TodoList $todoList)
     {
         //
+        return view('todolist.edit')->with('todoList', $todoList);
     }
 
     /**
@@ -80,6 +81,8 @@ class TodoListController extends Controller
     public function update(Request $request, TodoList $todoList)
     {
         //
+        $updatedToDoList = TodoList::where('id', $todoList->id)->update(['title' => $request->title]);
+        return redirect('/');
     }
 
     /**
