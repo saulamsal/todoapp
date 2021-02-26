@@ -35,7 +35,12 @@ class TodoListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newToDo =
+            TodoList::create([
+                'title' => $request->todolistsingle,
+            ]);
+
+        return redirect('/');
     }
 
     /**

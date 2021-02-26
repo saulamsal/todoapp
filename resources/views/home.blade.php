@@ -7,5 +7,19 @@
 </div>
 
 
+<h3 class="text-left text-info">
+				Add a todo list
+			</h3>
+
+                <form class="d-block w-100" action="{{ route('todo_list.store') }}" method="POST">
+    <input name="todolistsingle" type="text" class="form-control w-100" placeholder="Your todo list" 
+  aria-label="Your todo list" aria-describedby="basic-1" required>
+
+  <div class="input-group-append w-100">
+    <button class="btn btn-primary mt-4" type="submit" name="todolistsubmit">Create a new list</button>
+  </div>
+
+
+</form>
 
 @endsection
