@@ -1,15 +1,9 @@
 @extends('app')
 @section('content')
 
-
 <div class="w-100  d-flex justify-content-center align-items-center flex-column">
     <h1 class="w-100 mb-4 text-center">Guideline Center toDo</h1>
 </div>
-
-
-
-
-
 
     <form class="d-block w-100" action="{{ route('todo_item.store') }}" method="POST">
     @csrf
@@ -83,16 +77,13 @@
 @if(count($toDoList))
 <h2 class="pt-2">Your Todo Items:</h2>
 @else
-<h2 class="pt-2">You don't have any items yet.</h2>
-
+<h2 class="pt-2 mt-4">You don't have any items yet.</h2>
 @endif
-
 
 
       @foreach($toDoList as $todoListCat)
 <div class="wrapper-todo_list">
  <div class="text-success font-weight-bold h4">{{ $todoListCat->title }}
-
 
      
 <a class="border-0 bg-transparent edit-btn" href="{{ route('todo_list.edit', $todoListCat->id) }}">
@@ -253,13 +244,10 @@ $priority = null;
   </table>
 </div>
 
-
 @else 
 
 <div class="font-weight-bold font-italic">No any entries yet.</div>
         @endif
-
-
 
 </div>
         
