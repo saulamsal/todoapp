@@ -18,6 +18,20 @@
   <input name="title"  type="text" class="form-control w-100" placeholder="Whats on your mind?" 
   aria-label="Whats on your mind?" aria-describedby="basic-1" required>
 
+
+  
+
+<label>To do List
+<input list="todo_list_value" name="todo_list_value" /></label>
+<datalist id="todo_list_value">
+
+          @foreach($toDoList as $todoListCat)
+  <option value="{{ $todoListCat->title }}">
+          @endforeach
+</datalist>
+
+
+
   <div class="input-group-append w-100 ">
     <button class="btn btn-primary mt-4" type="submit" name="todoitemsubmit">Create new todo item</button>
   </div>
