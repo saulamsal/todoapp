@@ -7,6 +7,31 @@
 </div>
 
 
+
+
+
+
+    <form class="d-block w-100" action="{{ route('todo_item.store') }}" method="POST">
+    @csrf
+        <div class="input-group mb-3 w-200">
+
+  <input name="title"  type="text" class="form-control w-100" placeholder="Whats on your mind?" 
+  aria-label="Whats on your mind?" aria-describedby="basic-1" required>
+
+  <div class="input-group-append w-100 ">
+    <button class="btn btn-primary mt-4" type="submit" name="todoitemsubmit">Create new todo item</button>
+  </div>
+</div>
+
+    </form>
+
+
+
+
+
+
+
+
 <h3 class="text-left text-info">
 				Add a todo list
 			</h3>

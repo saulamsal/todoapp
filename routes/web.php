@@ -18,3 +18,4 @@ Route::get('/', 'App\Http\Controllers\TodoListController@index');
 
 
 Route::resource('todo_list', 'App\Http\Controllers\TodoListController');
+Route::resource('todo_item', 'App\Http\Controllers\TodoItemController');
