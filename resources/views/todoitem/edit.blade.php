@@ -24,11 +24,10 @@
        min="2021-01-07T00:00" max="2022-12-14T00:00" required>
 
 
-
 <label>To do List
 <input list="todo_list_value" name="todo_list_value"  
 
-value=""
+value="{{  $todoItem->todoList->title }}"
  /></label>
 <datalist id="todo_list_value">
 

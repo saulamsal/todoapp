@@ -174,10 +174,7 @@ $priority = null;
         
 
 
-        <td>
            <td class="text-center">
-
-
 
 
 
@@ -197,9 +194,6 @@ $priority = null;
 </button>
 </form>
 
-
-
-                             </td>
 
         </td>
 

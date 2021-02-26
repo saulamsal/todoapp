@@ -9,4 +9,9 @@ class TodoItem extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'status', 'priority', 'author', 'todo_list', 'todo_list_id', 'deadline'];
+
+    public function todoList()
+    {
+        return $this->hasOne(\App\Models\TodoList::class, 'id', 'todo_list_id');
+    }
 }

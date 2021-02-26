@@ -111,6 +111,8 @@ class TodoItemController extends Controller
     public function update(Request $request, TodoItem $todoItem)
     {
         //
+        $todoItem->update($request->all());
+        return redirect('/');
     }
 
     /**
