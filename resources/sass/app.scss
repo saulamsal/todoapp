@@ -1,8 +1,19 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    padding: 30px;
+    max-width: 911px;
+    margin: 0 auto;
+    font-family: "Inter";
+}
+
+svg {
+    width: 20px;
+}
