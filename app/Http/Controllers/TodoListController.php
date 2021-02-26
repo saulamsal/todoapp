@@ -35,6 +35,10 @@ class TodoListController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = $request->validate([
+            'todolistsingle' => 'required||max:255',
+        ]);
+
         $newToDo =
             TodoList::create([
                 'title' => $request->todolistsingle,

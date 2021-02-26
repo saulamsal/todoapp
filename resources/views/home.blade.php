@@ -12,6 +12,7 @@
 			</h3>
 
                 <form class="d-block w-100" action="{{ route('todo_list.store') }}" method="POST">
+                    @csrf
     <input name="todolistsingle" type="text" class="form-control w-100" placeholder="Your todo list" 
   aria-label="Your todo list" aria-describedby="basic-1" required>
 
