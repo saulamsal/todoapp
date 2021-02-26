@@ -22,6 +22,13 @@ class CreateTodoItemsTable extends Migration
             $table->string('deadline')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('todo_items', function ($table) {
+            $table->bigInteger('todo_list_id')->unsigned()->nullable();
+            $table->foreign('todo_list_id')
+                ->references('id')->on('todo_lists')
+                ->onDelete('cascade');
+        });
     }
 
     /**
