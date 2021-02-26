@@ -10025,3 +10025,28 @@ tr.is-completed {
   text-decoration: line-through;
   color: #8e8e8e;
 }
+
+.wrapper-todo_list {
+  padding: 20px;
+  margin: 19px 10px;
+  border-radius: 10px;
+  border: solid 1px #bdf3c0;
+}
+
+.table-light,
+.table-light > th,
+.table-light > td {
+  background: transparent;
+}
+
+tr.priority-High {
+  background: #ff000014;
+}
+
+tr.priority-Medium {
+  background: #ffeb3b38;
+}
+
+tr.priority-Low {
+  background: #00968814;
+}

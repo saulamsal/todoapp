@@ -110,7 +110,7 @@
 </form>
   
 </div>
-</div>
+
          
 
 
@@ -166,6 +166,7 @@ $priority = null;
         <tr class=" @if($todoListItem->status == 1) 
  is-completed 
  @endif 
+  priority-{{ $priority }}
  ">
 
 
@@ -260,7 +261,7 @@ $priority = null;
 
 
 
-
+</div>
         
 @endforeach
 
