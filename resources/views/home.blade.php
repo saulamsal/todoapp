@@ -133,6 +133,26 @@
 
           @foreach($tmp as $todoListItem)
 
+          @php 
+$priority = null;
+
+  switch($todoListItem->priority) {
+ case '3':
+   $priority = "High";
+       break;
+
+  case '2':
+       $priority = "Medium";
+        break;
+
+  default:
+    $priority = "Low";
+}
+
+@endphp
+
+
+
         <tr class=" @if($todoListItem->status == 1) 
  is-completed 
  @endif 
@@ -140,7 +160,7 @@
 
 
         <td class="font-weight-bold">{{ $todoListItem->title }}</td>
-                <td >{{ $todoListItem->priority }}</td>
+                <td >{{ $priority }}</td>
         <td>{{ $todoListItem->author }}</td>
         <td>{{ $todoListItem->deadline }}</td>
         <td >{{ $todoListItem->Due }}</td>
