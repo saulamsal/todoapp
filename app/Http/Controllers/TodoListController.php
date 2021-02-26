@@ -91,5 +91,7 @@ class TodoListController extends Controller
     public function destroy(TodoList $todoList)
     {
         //
+        $todoList->delete();
+        return redirect('/');
     }
 }
