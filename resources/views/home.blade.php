@@ -23,4 +23,18 @@
 
 </form>
 
+
+
+
+
+
+
+      @foreach($toDoList as $todoListCat)
+<div class="wrapper-todo_list">
+ <div class="text-success font-weight-bold h4">{{ $todoListCat->title }}</div></div>
+         
+         
+@endforeach
+
+
 @endsection

@@ -14,7 +14,8 @@ class TodoListController extends Controller
      */
     public function index()
     {
-        //
+        $toDoList = TodoList::latest()->get();
+        return view('home', compact('toDoList'));
     }
 
     /**
