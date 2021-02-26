@@ -40,7 +40,8 @@ class TodoItemController extends Controller
         //
 
         $validateData = $request->validate([
-            'title' => 'required||max:255'
+            'title' => 'required||max:255',
+            'deadline' => 'required'
         ]);
 
         $toDoListID = null;
@@ -65,7 +66,11 @@ class TodoItemController extends Controller
 
         $todo = TodoItem::create([
             'title' => $request->title,
-            'todo_list_id' => (int)$toDoListID
+            'status' => 0,
+            'priority' => $request->priority ?  $request->priority : 'medium',
+            'author' => $request->author ? $request->author : NULL,
+            'todo_list_id' => (int)$toDoListID,
+            'deadline' => $request->deadline ?  $request->deadline : NULL
         ]);
 
         return redirect('/');

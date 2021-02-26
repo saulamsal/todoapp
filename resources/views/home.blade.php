@@ -121,7 +121,10 @@
         {{-- <th scope="col">#</th> --}}
                 {{-- <th scope="col"></th> --}}
         <th scope="col">To do</th>
-       
+             <th scope="col">Priority</th>
+        <th scope="col">Author</th>
+         <th scope="col">Due</th>
+       <th scope="col">Modify</th>
     <th scope="col">Postings</th>
       </tr>
     </thead>
@@ -137,6 +140,10 @@
 
 
         <td class="font-weight-bold">{{ $todoListItem->title }}</td>
+                <td >{{ $todoListItem->priority }}</td>
+        <td>{{ $todoListItem->author }}</td>
+        <td>{{ $todoListItem->deadline }}</td>
+        <td >{{ $todoListItem->Due }}</td>
 
 <td> 
 <div>Created at: {{ $todoListItem->created_at }} </div>
