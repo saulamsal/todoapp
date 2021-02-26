@@ -15,6 +15,11 @@ class CreateTodoItemsTable extends Migration
     {
         Schema::create('todo_items', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->boolean('status')->nullable();
+            $table->string('priority')->nullable();
+            $table->string('author')->nullable();
+            $table->string('deadline')->nullable();
             $table->timestamps();
         });
     }
