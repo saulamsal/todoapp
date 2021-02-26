@@ -191,7 +191,24 @@ $priority = null;
         <td class="font-weight-bold">{{ $todoListItem->title }}</td>
                 <td >{{ $priority }}</td>
         <td>{{ $todoListItem->author }}</td>
-        <td>{{ $todoListItem->deadline }}</td>
+    
+         <td>
+         @if($todoListItem->deadline != NULL)
+            @if(!(\Carbon\Carbon::parse($todoListItem->deadline)->isPast()))
+              {{ \Carbon\Carbon::parse($todoListItem->deadline)->diffForHumans() }}
+            @else 
+
+            @if($todoListItem->status == 0)
+            <p class="text-danger">PAST DUE</p>
+            @endif
+
+              @endif
+
+         @else 
+         - 
+         @endif
+        </td>
+
         
 
 
