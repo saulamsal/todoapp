@@ -10014,3 +10014,14 @@ body {
 svg {
   width: 20px;
 }
+
+.is-completed .complete-btn svg {
+  background: #38c172;
+  border-radius: 50px;
+  fill: #fff;
+}
+
+tr.is-completed {
+  text-decoration: line-through;
+  color: #8e8e8e;
+}
