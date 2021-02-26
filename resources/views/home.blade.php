@@ -80,6 +80,14 @@
 
 
 
+@if(count($toDoList))
+<h2 class="pt-2">Your Todo Items:</h2>
+@else
+<h2 class="pt-2">You don't have any items yet.</h2>
+
+@endif
+
+
 
       @foreach($toDoList as $todoListCat)
 <div class="wrapper-todo_list">
@@ -192,7 +200,7 @@ $priority = null;
 
 
                              </td>
-                             
+
         </td>
 
       

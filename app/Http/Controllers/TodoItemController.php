@@ -96,6 +96,9 @@ class TodoItemController extends Controller
     public function edit(TodoItem $todoItem)
     {
         //
+        //
+        $toDoList = TodoList::latest()->get();
+        return view('todoitem.edit')->with('todoItem', $todoItem)->with('toDoList', $toDoList);
     }
 
     /**
@@ -119,5 +122,7 @@ class TodoItemController extends Controller
     public function destroy(TodoItem $todoItem)
     {
         //
+        $todoItem->delete();
+        return redirect('/');
     }
 }
