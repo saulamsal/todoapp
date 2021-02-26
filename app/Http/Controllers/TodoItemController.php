@@ -36,6 +36,12 @@ class TodoItemController extends Controller
     public function store(Request $request)
     {
         //
+
+        $todo = TodoItem::create([
+            'title' => $request->title
+        ]);
+
+        return redirect('/');
     }
 
     /**
